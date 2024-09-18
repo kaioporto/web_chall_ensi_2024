@@ -1,0 +1,8 @@
+$ postgres
+createdb b4sdb -O b4suser
+
+$ postgres 
+psql -c "GRANT ALL PRIVILEGES ON database b4sdb TO b4suser"
+
+$ postgres
+psql -U b4suser -d b4sdb -h localhost -f create.pgsql.sql
