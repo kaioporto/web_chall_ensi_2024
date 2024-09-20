@@ -18,14 +18,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   } 
   
   if(empty($username_err) && empty($email_err)){
-    unset($_POST['enviar']);
-    $params = $_POST;
-    print_r($params);
-    print_r($_POST);
-    $return = $db->update("users", $params);
-    if($db->update("users", $params)){
-      #header("location: index.php");
-      echo $return;
+    $params = array("username" => $_POST["username"], "email" => $_POST["email"]);
+    $where = array("id" => $user["id"]);
+    $return = $db->update("users", $params, $where);
+    if($return){
+      header("location: index.php");
+      #echo $return;
     }
     else{
       print "<p id='warning'> Algo deu errado. Tente novamente mais tarde.\n";

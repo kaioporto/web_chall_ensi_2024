@@ -104,7 +104,7 @@
 				$this->bindValues();
 				$this->stmt->execute();
 			}catch(Exception $e){
-				return $e->getMessage();
+				$e->getMessage();
 			}
 			if(isset($this->stmt) && $this->stmt->rowCount() != 0){
 				return true;

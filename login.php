@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				<label>Username</label><br>
 				<input type="text" name="username" class="form-control" value="<?php echo $username ?>"><br>
 				<span id="warning"><?php echo $username_err; ?></span>
-			</div>    
+			</div><br>
 			<div class="form-group" <?php echo (!empty($password_err)) ? 'id=\'warning\'' : ''; ?>>
 				<label>Password</label><br>
 				<input type="password" name="password" class="form-control"><br><br>
@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<div class="form-group">
 				<input type="submit" value="Login"><br>
 				<span id="warning"><?php echo $password_err; ?></span>
-			</div>
+			</div><br>
 			<p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
 		</form>
 	</div>
